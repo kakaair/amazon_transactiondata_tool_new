@@ -6,7 +6,7 @@ import pandas as pd
 # 读入所有店铺交易数据
 results_list = []
 # 从inputfiles里面逐个读出文件信息
-for (root, dirs, files) in os.walk('C:/Users/Administrator/Desktop/inputfiles'):
+for (root, dirs, files) in os.walk('./inputfiles'):
     for file in files:
         filename = os.path.join(root, file)
         print(filename)
@@ -131,7 +131,7 @@ sales_statistics = concat_all.groupby(['store','sku'])['销售净额','销售量
 
 sales_statistics=sales_statistics.round(2)
 
-sales_statistics.to_csv('C:/Users/Administrator/Desktop/销售统计1.csv')
+sales_statistics.to_csv('./销售统计1.csv')
 
 print('all done...')
 exit(0)
